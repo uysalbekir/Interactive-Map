@@ -1,0 +1,51 @@
+/*!
+ * Start Bootstrap - Full (https://startbootstrap.com/template-overviews/full)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-full/blob/master/LICENSE)
+ */
+
+body{
+  background-color: #191919;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  font-family: 'Oswald', sans-serif;
+  overflow-x: hidden;
+  width:100vw;
+}
+
+::selection{
+  background: #FFFFFF; /* WebKit/Blink Browsers */
+}
+::-moz-selection{
+  background: #FFFFFF; /* Gecko Browsers */
+}
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #555;
+    visibility: hidden;
+    border-radius: 2px;;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+.show-scrollbar::-webkit-scrollbar-thumb{
+  visibility: visible;
+  opacity: 1;
+}
+
+#mapid{
+  height: 100vh;
+}
+
+footer{
+  z-index: 5000;
+  position: fixed;
+  bottom: 0;
+}
