@@ -1,7 +1,45 @@
-// Fade in
+// Backend
 $(document).ready(function() {
-$('body').fadeIn(500);
-});
+
+ // Initialize Firebase
+ var config = {
+   apiKey: "AIzaSyCamyJnN9WTw2taT0IpmtWbtt03yUUvwgA",
+   authDomain: "ehv-doet.firebaseapp.com",
+   databaseURL: "ehv-doet.firebaseio.com",
+   projectId: "ehv-doet",
+   storageBucket: "ehv-doet.appspot.com",
+   messagingSenderId: "340245264979"
+ };
+ firebase.initializeApp(config);
+
+ //database reference
+ var ref = firebase.database().ref();
+
+  ref.on("value", function(snapshot) {
+    var dataAlles = snapshot.val().Vrijwilligerswerk;
+
+    jQuery.each(dataAlles, function(i, val) {
+      var address = val.Straat + " " + val.Huisnummer + " " + val.Stad;
+      var pin_id = val.ID;
+
+      //Convert coordinates
+
+    });
+    $.getJSON('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + "marconilaan 16 eindhoven", function(data) {
+        $.each(data, function(key, val) {
+          //Marker location
+          var pin_id = L.marker([val.lat,val.lon]).addTo(mymap);
+          //Marker Popup info
+          pin_id.bindPopup("<b>Hello world!</b><br>I am marker 1").closePopup();
+          console.log("lati: " + val.lat + ", longi: " + val.lon )
+        });
+    });
+  });
+
+}());
+
+
+
 
 var mymap = L.map('mapid').setView([51.441643, 5.469722], 11);
 
@@ -34,3 +72,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiYmVraXJ1eXNhbCIsImEiOiJjanAyZGExajcwNWlxM3FwaG1zdnVmeDV4In0.iCQ_PVwQ2LMdA6cdPaUR-Q'
 }).addTo(mymap);
+
+// Fade in
+$(document).ready(function() {
+$('body').fadeIn(500);
+});

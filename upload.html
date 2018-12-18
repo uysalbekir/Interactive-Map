@@ -13,10 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Leaflet CSS -->
-    <link href="css/leaflet.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-
     <!-- CSS -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -35,18 +31,18 @@
 <body>
 
   <!-- Page Content -->
-  <section id="ba">
-    <div id="mapid"></div>
+  <section>
+    <div id="upload">
+      <input type="file">
+    
+      <textarea type="text" class="d" name="Text1" cols="100" rows="10"></textarea>
+    </div>
   </section>
 
     <footer id="footer">
         <div class="container text-left">
             <div class="row">
-              <div id="search">
-                    <input type="text" name="addr" value="" id="addr" size="10" />
-                    <button type="button" onclick="addr_search();">Search</button>
-                    <div id="results"/>
-                    </div>
+
             </div>
         </div>
     </footer>
@@ -55,13 +51,11 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-    <!-- Leaflet JavaScript -->
-    <script src="js/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <!-- Papa Parse -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.7/papaparse.min.js"></script>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="js/upload.js"></script>
 
 </body>
 
