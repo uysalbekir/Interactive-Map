@@ -32,17 +32,49 @@
 
   <!-- Page Content -->
   <section>
-    <div id="upload">
-      <input type="file">
-    
-      <textarea type="text" class="d" name="Text1" cols="100" rows="10"></textarea>
+    <div class="container text-left">
+
+        <div class="row text-white inputfields">
+            <div class="col-md-6">
+              <h2>Handmatig invoeren</h2><br>
+                <form id="manualform">
+                    Titel:<br>
+                    <input type="text" size="50" class="input title" id="title" value=""><br>
+                    Straat:<br>
+                    <input type="text" size="50" class="input street" id="street" value=""><br>
+                    Huisnummer:<br>
+                    <input type="text" size="50" class="input hnumber" id="hnumber" value=""><br>
+                    Stad:<br>
+                    <input type="text" size="50" class="input city" id="city" value=""><br><br>
+                    <input type="submit" value="Opslaan">
+                </form>
+                <div class="alert"></div>
+            </div>
+            <div class="col-md-6">
+              <h2>CSV bestand uploaden</h2><br>
+              <input id="uploadfield" type="file" class="text-white" value="Bestand uploaden">
+              <h2>Verwijderen</h2><br>
+              <form id="deleteform">
+              <select id="dropdownDelete">
+              </select>
+              <input type="submit" value="Verwijderen">
+              </form>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-md-12 text-white" id="output">
+
+          </div>
+        </div>
     </div>
+
   </section>
 
     <footer id="footer">
         <div class="container text-left">
             <div class="row">
-
             </div>
         </div>
     </footer>

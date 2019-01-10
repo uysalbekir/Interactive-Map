@@ -11,16 +11,8 @@ body{
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  font-family: 'Oswald', sans-serif;
   overflow-x: hidden;
   width:100vw;
-}
-
-::selection{
-  background: #FFFFFF; /* WebKit/Blink Browsers */
-}
-::-moz-selection{
-  background: #FFFFFF; /* Gecko Browsers */
 }
 
 ::-webkit-scrollbar{
@@ -48,4 +40,35 @@ footer{
   z-index: 5000;
   position: fixed;
   bottom: 0;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+.inputfields{
+  border-bottom: 2px #FFF solid;
+  padding: 20px;
+}
+
+.inputbox{
+  margin-right: 10px;
+
+}
+
+#uploadfield{
+  margin-bottom: 10px;
+}
+
+#submitbutton{
+  display: none;
+  position: fixed;
+  bottom:0;
+  right:0;
 }

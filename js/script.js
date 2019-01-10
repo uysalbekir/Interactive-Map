@@ -16,24 +16,17 @@ $(document).ready(function() {
  var ref = firebase.database().ref();
 
   ref.on("value", function(snapshot) {
-    var dataAlles = snapshot.val().Vrijwilligerswerk;
+    var dataAlles = snapshot.val().gegevens;
 
     jQuery.each(dataAlles, function(i, val) {
-      var address = val.Straat + " " + val.Huisnummer + " " + val.Stad;
-      var pin_id = val.ID;
 
-      //Convert coordinates
+      // Marker
+      var i = L.marker([val.latitude,val.longitude]).addTo(mymap);
+      // Popup data
+      i.bindPopup("<b>"+ val.titel +"</b>").closePopup();
 
     });
-    $.getJSON('https://nominatim.openstreetmap.org/search?format=json&limit=5&q=' + "marconilaan 16 eindhoven", function(data) {
-        $.each(data, function(key, val) {
-          //Marker location
-          var pin_id = L.marker([val.lat,val.lon]).addTo(mymap);
-          //Marker Popup info
-          pin_id.bindPopup("<b>Hello world!</b><br>I am marker 1").closePopup();
-          console.log("lati: " + val.lat + ", longi: " + val.lon )
-        });
-    });
+
   });
 
 }());
@@ -43,13 +36,11 @@ $(document).ready(function() {
 
 var mymap = L.map('mapid').setView([51.441643, 5.469722], 11);
 
-var marker1 = L.marker([51.433938,5.479669]).addTo(mymap); //Marker1
-var marker2 = L.marker([51.439288,5.463025]).addTo(mymap); //Marker2
-var marker3 = L.marker([51.441107,5.494253]).addTo(mymap); //Marker3
 
-marker1.bindPopup("<b>Hello world!</b><br>I am marker 1").closePopup();
-marker2.bindPopup("<b>Hello world!</b><br>I am marker 2").closePopup();
-marker3.bindPopup("<b>Hello world!</b><br>I am marker 3").closePopup();
+
+// marker1.bindPopup("<b>Hello world!</b><br>I am marker 1").closePopup();
+// marker2.bindPopup("<b>Hello world!</b><br>I am marker 2").closePopup();
+// marker3.bindPopup("<b>Hello world!</b><br>I am marker 3").closePopup();
 
 // Use the following to highlight a circle on the map.
 // var circle = L.circle([51.441643, 5.469722], {
